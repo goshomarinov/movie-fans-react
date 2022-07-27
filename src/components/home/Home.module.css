@@ -20,6 +20,7 @@
 }
 
 .home .all {
+    text-decoration: none;
     position: absolute;
     bottom: 110px;
     left: 280px;
@@ -34,6 +35,7 @@
 }
 
 .home .add {
+    text-decoration: none;
     position: absolute;
     bottom: 110px;
     left: 460px;
@@ -47,8 +49,9 @@
     font-size: 22px;
 }
 
-.home button:hover {
+.home a:hover {
     background-color: transparent;
+    border: 2px solid rgb(240, 102, 51);
 }
 
 .home-list {

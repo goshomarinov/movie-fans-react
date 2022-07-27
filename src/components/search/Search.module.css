@@ -1,0 +1,114 @@
+.search-heading {
+    max-width: 80vw;
+    text-align: center;
+    margin-left: 110px;
+    margin-bottom: 0px;
+    background-color: #3b4855;
+    color: #9ca4aa;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.search {
+    max-width: 80vw;
+    margin-left: 110px;
+    background-color: #3b4855;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    color: #fff;
+}
+
+.search img {
+    width: 100%;
+    max-height: 40vh;
+}
+
+.search form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search form input {
+    margin: 8px;
+    cursor: pointer;
+}
+
+.search form .search-btn {
+    background-color: rgb(240, 102, 51);
+    border-color: rgb(240, 102, 51);
+    color: #fff;
+    
+}
+
+.search form .search-btn:hover {
+    background-color: transparent;
+}
+
+.search-result {
+    width: 100%;   
+}
+
+.search-result .no-items {
+    max-width: 80vw;
+    text-align: center;
+    background-color: #3b4855;
+    color: #9ca4aa;
+}
+
+.search-result .search-items {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    color: #9ca4aa;
+    background-color: #3b4855;
+    padding: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.search-result .search-items .search-items-card {
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 12px;
+    border: 2px solid #9ca4aa;
+    border-radius: 8px;
+    background-color: #6d7379;
+}
+
+.search-items .search-items-card img {
+    width: 140px;
+   height: 215px;
+   border-radius: 8px;
+   margin-top: 12px;
+}
+
+.search-items .search-items-card h3 {
+    width: 70%;
+    margin-left: 22px;
+    color: #c5cace;
+}
+
+.search-items .search-items-card div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.search-items .search-items-card div button {
+    margin: 12px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #fff;
+    background-color: rgb(240, 102, 51);
+    border-color: rgb(240, 102, 51);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.search-items .search-items-card div button:hover {
+    background-color: transparent;
+}
