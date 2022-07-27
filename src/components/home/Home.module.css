@@ -1,0 +1,120 @@
+.home {
+    max-width: 80vw;
+    margin-left: 110px;
+    position: relative;
+}
+
+.home img {
+    width: 100%;
+    border-radius: 12px;
+    height: 68vh;
+}
+
+.home h1 {
+    position: absolute;
+    width: 50%;
+    font-size: 40px;
+    top: 50px;
+    left: 280px;
+    color: #fff;
+}
+
+.home .all {
+    position: absolute;
+    bottom: 110px;
+    left: 280px;
+    padding: 8px;
+    font-weight: bold;
+    background-color: rgb(240, 102, 51);
+    border-color: rgb(240, 102, 51);
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 22px;
+}
+
+.home .add {
+    position: absolute;
+    bottom: 110px;
+    left: 460px;
+    padding: 8px;
+    font-weight: bold;
+    background-color: rgb(240, 102, 51);
+    border-color: rgb(240, 102, 51);
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 22px;
+}
+
+.home button:hover {
+    background-color: transparent;
+}
+
+.home-list {
+    display: flex;
+    max-width: 80vw;
+    margin-left: 110px;
+    margin-top: 0px;
+    background-color: #3b4855;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.recent {
+    text-align: center;
+    color: #9ca4aa;
+    background-color: #3b4855;
+    max-width: 80vw;
+    margin-left: 110px;
+    margin-bottom: 0px;
+    padding: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.home-list .home-list-card {
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 16px;
+    border: 2px solid #9ca4aa;
+    border-radius: 8px;
+    background-color: #6d7379;
+}
+
+.home-list .home-list-card img {
+    width: 140px;
+   height: 215px;
+   border-radius: 8px;
+   margin-top: 12px;
+}
+
+.home-list .home-list-card h3 {
+    width: 70%;
+    margin-left: 22px;
+    color: #c5cace;
+}
+
+.home-list .home-list-card div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.home-list .home-list-card div button {
+    margin: 12px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #fff;
+    background-color: rgb(240, 102, 51);
+    border-color: rgb(240, 102, 51);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.home-list .home-list-card div button:hover {
+    background-color: transparent;
+}

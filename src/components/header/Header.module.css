@@ -1,0 +1,50 @@
+@import url(https://use.fontawesome.com/releases/v6.1.1/css/all.css);
+
+.header-el {
+    display: flex;
+    background-color: #3b4855;
+    width: 80vw;
+    margin-left: 110px;
+    margin-top: 26px;
+    margin-bottom: 26px;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    color: #bcc1c7;
+    margin: 12px;
+    font-size: 32px;
+}
+
+.logo h1 a{
+    color: #9ca4aa;
+    text-decoration: none;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+}
+
+.list {
+    display: flex;
+    list-style-type: none;
+}
+
+.list .list-item a {
+    text-decoration: none;
+    padding: 22px;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.list .list-item a:hover {
+    background-color: rgb(240, 102, 51);
+}
