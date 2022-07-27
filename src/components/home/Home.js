@@ -19,9 +19,6 @@ export const Home = () => {
                         <h3>Star Wars: Episode I - The Phantom Menace</h3>
                         <div>
                             <button>Details</button>
-                            <button>Comment</button>
-                            <button>Edit</button>
-                            <button>Delete</button>
                         </div>
                 </div>
 
@@ -30,9 +27,6 @@ export const Home = () => {
                         <h3>Star Wars: Episode II - Attack of the Clones</h3>
                         <div>
                             <button>Details</button>
-                            <button>Comment</button>
-                            <button>Edit</button>
-                            <button>Delete</button>
                         </div>
                 </div>
 
@@ -41,9 +35,6 @@ export const Home = () => {
                         <h3>Star Wars: Episode III - Revenge Of The Sith</h3>
                         <div>
                             <button>Details</button>
-                            <button>Comment</button>
-                            <button>Edit</button>
-                            <button>Delete</button>
                         </div>
                 </div>
             </section>
