@@ -1,0 +1,39 @@
+.register {
+    display: flex;
+    max-width: 80vw;
+    margin-left: 110px;
+    background-color: #3b4855;
+    border-radius: 8px;
+}
+
+.register img {
+    max-width: 40%;
+    max-height: 70vh;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.register .register-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 30%;
+    margin-left: 150px;
+    margin-top: 60px;
+    color: #fff;
+}
+
+.register .register-form input {
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.register .register-form .register-btn {
+    color: #fff;
+    border: 1px solid rgb(240, 102, 51);
+    background-color: rgb(240, 102, 51);
+}
+
+.register .register-form .register-btn:hover {
+    background-color: transparent;
+}
