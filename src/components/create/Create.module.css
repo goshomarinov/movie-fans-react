@@ -1,0 +1,39 @@
+.create {
+    display: flex;
+    max-width: 80vw;
+    margin-left: 110px;
+    background-color: #3b4855;
+    border-radius: 8px;
+}
+
+.create img {
+    width: 40%;
+    max-height: 70vh;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.create .create-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 30%;
+    margin-left: 150px;
+    margin-top: 60px;
+    color: #fff;
+}
+
+.create .create-form input {
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.create .create-form .create-btn {
+    color: #fff;
+    border: 1px solid rgb(240, 102, 51);
+    background-color: rgb(240, 102, 51);
+}
+
+.create .create-form .create-btn:hover {
+    background-color: transparent;
+}

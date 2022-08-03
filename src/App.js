@@ -14,6 +14,7 @@ import { Search } from './components/search/Search';
 import { Footer } from './components/footer/Footer';
 import { clearUserData } from './utils/localStorage';
 import { NotFound } from './components/not-found/NotFound';
+import { Create } from './components/create/Create';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/catalog' element={<Catalog />} />
+                    <Route path='/create' element={<Create />} />
                     <Route path='/search' element={<Search />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/register' element={<Register />} />
