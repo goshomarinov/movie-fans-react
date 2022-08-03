@@ -19,7 +19,7 @@ export const Register = () => {
         userErr: '',
         passErr: '',
         rePassErr: '',
-    })
+    });
     const [values, setValues] = useState({
         email: '',
         password: '',
