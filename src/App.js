@@ -13,6 +13,7 @@ import { Logout } from './components/logout/Logout';
 import { Search } from './components/search/Search';
 import { Footer } from './components/footer/Footer';
 import { clearUserData } from './utils/localStorage';
+import { NotFound } from './components/not-found/NotFound';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
                     <Route path='/login' element={<Login />} />
                     <Route path='/register' element={<Register />} />
                     <Route path='/logout' element={<Logout />} />
+                    <Route path='*' element={<NotFound />} />
                 </Routes>
 
             </main>
