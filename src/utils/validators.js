@@ -1,7 +1,9 @@
-export const usernameValidator = (username) => {
-    if (username.length < 4) {
+const EMAIL_PATTERN = /^([a-zA-Z]+)@([a-zA-Z]+)\.([a-zA-Z]+)$/;
+export const emailValidator = (email) => {
+
+    if (!EMAIL_PATTERN.test(email)) {
         return (
-            <span style={{ color: 'red' }}>Username must be minimum 4 characters long!</span>
+            <span style={{ color: 'red' }}>Email is not valid</span>
         );
     } else {
         return '';
@@ -32,7 +34,7 @@ export const repassValidator = (values) => {
     }
 }
 export const loginBtnValidator = (values) => {
-    if (values.username.length < 4 || values.password.length < 6) {
+    if (!EMAIL_PATTERN.test(values.email) || values.password.length < 6) {
         return true;
     } else {
         return false;
@@ -40,7 +42,7 @@ export const loginBtnValidator = (values) => {
 }
 
 export const registerBtnValidator = (values) => {
-    if (values.username.length < 4
+    if (!EMAIL_PATTERN.test(values.email)
         || values.password.length < 6
         || values.rePassword.length < 6
         || values.rePassword != values.password) {

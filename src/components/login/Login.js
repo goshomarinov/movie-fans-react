@@ -1,16 +1,22 @@
 import loginStyles from '../login/Login.module.css';
 
-import { useState } from 'react';
+import { useState, useContext} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../contexts/UserContext';
+import * as userApi from '../../services/userService';
 
-import { usernameValidator, passwordValidator, loginBtnValidator } from '../../utils/validators';
+import { emailValidator, passwordValidator, loginBtnValidator } from '../../utils/validators';
 
 export const Login = () => {
+    const { userLogin } = useContext(UserContext);
+    const navigate = useNavigate();
+
     const [errors, setErrors] = useState({
         userErr: '',
         passErr: '',
     })
     const [values, setValues] = useState({
-        username: '',
+        email: '',
         password: '',
     });
 
@@ -22,10 +28,10 @@ export const Login = () => {
     };
 
     const errorCheck = (e) => {
-        if(e.target.name == 'username') {
+        if(e.target.name == 'email') {
             setErrors(errors => ({
                 ...errors,
-                userErr: usernameValidator(values.username),
+                userErr: emailValidator(values.email),
             }))
         } else if (e.target.name == 'password') {
             setErrors(errors => ({
@@ -38,22 +44,37 @@ export const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(Object.fromEntries(new FormData(e.target)))
+        
+        const {
+            email,
+            password,
+        } = Object.fromEntries(new FormData(e.target));
+
+        try {
+           userApi.login(email, password)
+           .then(user => {
+               userLogin(user);
+               navigate('/')
+           })
+
+        } catch(err) {
+            alert(err.message)
+        }
     }
 
     return (
         <section className={loginStyles['login']}>
             <img src="https://thumbs.dreamstime.com/b/vector-illustration-isolated-white-background-login-button-icon-126999949.jpg" alt="" />
             <form className={loginStyles['login-form']} onSubmit={onSubmit}>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="email">Email</label>
                 <input
                     type="text"
-                    id="username"
-                    name="username"
+                    id="email"
+                    name="email"
                     onChange={changeHandler}
-                    value={values.username}
+                    value={values.email}
                     onBlur={errorCheck}
-                    placeholder="Username"
+                    placeholder="Email"
                 />
                 {errors.userErr}
 

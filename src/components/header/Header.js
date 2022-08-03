@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext';
 
-import  headerStyles from '../header/Header.module.css'
+import headerStyles from '../header/Header.module.css'
 
 export const Header = () => {
+    const { userData } = useContext(UserContext);
     return (
         <header className={headerStyles['header-el']}>
             <section className={headerStyles['logo']}>
@@ -13,7 +16,7 @@ export const Header = () => {
 
             <nav className={headerStyles['nav-bar']}>
                 <ul className={headerStyles['list']}>
-                    <li className={headerStyles['list-item']}>
+                <li className={headerStyles['list-item']}>
                         <Link to="/">Home</Link>
                     </li>
 
@@ -24,22 +27,28 @@ export const Header = () => {
                     <li className={headerStyles['list-item']}>
                         <Link to="/catalog">Movies</Link>
                     </li>
+                    {userData
+                        ?
+                        <>
+                            <li className={headerStyles['list-item']}>
+                                <Link to="/create">Add Movie</Link>
+                            </li>
 
-                    <li className={headerStyles['list-item']}>
-                        <Link to="/create">Add Movie</Link>
-                    </li>
+                            <li className={headerStyles['list-item']}>
+                                <Link to="/logout">Logout</Link>
+                            </li>
+                        </>
+                        :
+                        <>
+                            <li className={headerStyles['list-item']}>
+                                <Link to="/login">Login</Link>
+                            </li>
 
-                    <li className={headerStyles['list-item']}>
-                        <Link to="/login">Login</Link>
-                    </li>
-
-                    <li className={headerStyles['list-item']}>
-                        <Link to="/register">Register</Link>
-                    </li>
-
-                    <li className={headerStyles['list-item']}>
-                        <Link to="/logout">Logout</Link>
-                    </li>
+                            <li className={headerStyles['list-item']}>
+                                <Link to="/register">Register</Link>
+                            </li>
+                        </>
+                    }
                 </ul>
             </nav>
         </header>

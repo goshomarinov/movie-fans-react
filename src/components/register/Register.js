@@ -1,21 +1,27 @@
 import registerStyles from '../register/Register.module.css';
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../contexts/UserContext';
+import * as userApi from '../../services/userService';
 import {
     repassValidator,
-    usernameValidator,
+    emailValidator,
     passwordValidator,
     registerBtnValidator
 } from '../../utils/validators';
 
 export const Register = () => {
+    const { userLogin } = useContext(UserContext);
+    const navigate = useNavigate();
+
     const [errors, setErrors] = useState({
         userErr: '',
         passErr: '',
         rePassErr: '',
     })
     const [values, setValues] = useState({
-        username: '',
+        email: '',
         password: '',
         rePassword: '',
     });
@@ -28,10 +34,10 @@ export const Register = () => {
     };
 
     const errorCheck = (e) => {
-        if (e.target.name == 'username') {
+        if (e.target.name == 'email') {
             setErrors(errors => ({
                 ...errors,
-                userErr: usernameValidator(values.username),
+                userErr: emailValidator(values.email),
             }))
         } else if (e.target.name == 'password') {
             setErrors(errors => ({
@@ -48,28 +54,43 @@ export const Register = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(Object.fromEntries(new FormData(e.target)))
+
+        const {
+            email,
+            password,
+        } = Object.fromEntries(new FormData(e.target));
+        
+        try {
+           userApi.register(email, password)
+           .then(user => {
+               userLogin(user);
+               navigate('/')
+           })
+
+        } catch(err) {
+            alert(err.message)
+        }
     };
 
     return (
         <section className={registerStyles['register']}>
             <img src="https://st.depositphotos.com/2036511/3067/v/450/depositphotos_30675099-stock-illustration-round-register-now-button.jpg" alt="" />
             <form className={registerStyles['register-form']} onSubmit={onSubmit}>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="email">Username</label>
                 <input
                     type="text"
-                    id="username"
-                    name="username"
+                    id="email"
+                    name="email"
                     onChange={changeHandler}
-                    value={values.username}
+                    value={values.email}
                     onBlur={errorCheck}
-                    placeholder="Username"
+                    placeholder="Email"
                 />
                 {errors.userErr}
 
                 <label htmlFor="password">Password</label>
                 <input
-                    type="text"
+                    type="password"
                     id="password"
                     name="password"
                     onChange={changeHandler}
@@ -81,7 +102,7 @@ export const Register = () => {
 
                 <label htmlFor="rePassword">Repeat Password</label>
                 <input
-                    type="text"
+                    type="password"
                     id="rePassword"
                     name="rePassword"
                     onChange={changeHandler}
