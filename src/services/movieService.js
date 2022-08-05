@@ -2,26 +2,26 @@ import * as api from './requester';
 
 
 
-export async function getAllAlbums() {
-    return api.get('/data/albums?sortBy=_createdOn%20desc&distinct=name');
+export async function getAllmovies() {
+    return api.get('/data/movies?sortBy=_createdOn%20desc');
 }
 
 export async function createMovie(data) {
     return api.post('/data/movies', data);
 }
 
-export async function getOneAlbum(id) {
-    return api.get(`/data/albums/${id}`);
+export async function getOneMovie(id) {
+    return api.get(`/data/movies/${id}`);
 }
 
-export async function editAlbum(id, data) {
-    return api.put(`/data/albums/${id}`, data);
+export async function editMovies(id, data) {
+    return api.put(`/data/movies/${id}`, data);
 }
 
-export async function deleteAlbum(id) {
-    return api.del(`/data/albums/${id}`);
+export async function deleteMovies(id) {
+    return api.del(`/data/movies/${id}`);
 }
 
 export async function getResultSearch(query) {
-    return api.get(`/data/albums?where=name%20LIKE%20%22${query}%22`);
+    return api.get(`/data/movies?where=name%20LIKE%20%22${query}%22`);
 }

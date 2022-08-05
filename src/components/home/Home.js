@@ -1,8 +1,26 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import homeStyles from '../home/Home.module.css'
+import * as api from '../../services/movieService';
+
+import homeStyles from '../home/Home.module.css';
+import { HomeList } from './homeList/HomeList';
 
 export const Home = () => {
+    const [movies, setMovies] = useState([]);
+
+    useEffect(() => {
+        try {
+            api.getAllmovies()
+            .then(result => { 
+                const recent = result.slice(0, 3);
+                setMovies(recent);
+            })
+        } catch (err) {
+            alert(err.message);
+        }
+    }, []);
+
     return (
         <main>
             <section className={homeStyles['home']}>
@@ -16,29 +34,7 @@ export const Home = () => {
             <h2 className={homeStyles['recent']}>Most Recent Posts</h2>
 
             <section className={homeStyles['home-list']}>
-                <div className={homeStyles['home-list-card']}>
-                    <img src="https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg" alt="" />
-                        <h3>Star Wars: Episode I - The Phantom Menace</h3>
-                        <div>
-                            <button>Details</button>
-                        </div>
-                </div>
-
-                <div className={homeStyles['home-list-card']}>
-                    <img src="https://m.media-amazon.com/images/I/51BGV8AJ4RL._SY445_.jpg" alt="" />
-                        <h3>Star Wars: Episode II - Attack of the Clones</h3>
-                        <div>
-                            <button>Details</button>
-                        </div>
-                </div>
-
-                <div className={homeStyles['home-list-card']}>
-                    <img src="https://cdn.wallpapersafari.com/94/40/IfP0vz.jpg" alt="" />
-                        <h3>Star Wars: Episode III - Revenge Of The Sith</h3>
-                        <div>
-                            <button>Details</button>
-                        </div>
-                </div>
+                {movies.map(movie => <HomeList movie={movie} key={movie._id} />)}
             </section>
         </main>
     );

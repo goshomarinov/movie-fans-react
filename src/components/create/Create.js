@@ -53,7 +53,7 @@ export const Create = () => {
         } else if (e.target.name == 'description') {
             setErrors(errors => ({
                 ...errors,
-                year: descValidator(values.description),
+                description: descValidator(values.description),
             }))
         }
     };
@@ -78,7 +78,8 @@ export const Create = () => {
             )
             navigate('/catalog');
         } catch (err) {
-            alert(err.message)
+            alert(err.message);
+            navigate('/');
         }
 
     }
@@ -134,6 +135,7 @@ export const Create = () => {
                     placeholder="Description"
                 />
                 {errors.description}
+
                 <input
                     className={createStyles['create-btn']}
                     type="submit"

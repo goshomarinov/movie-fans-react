@@ -32,6 +32,7 @@
     color: #fff;
     border: 1px solid rgb(240, 102, 51);
     background-color: rgb(240, 102, 51);
+    margin-top: 10px;
 }
 
 .create .create-form .create-btn:hover {
