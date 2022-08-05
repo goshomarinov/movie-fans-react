@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import { UserContext } from './contexts/UserContext';
+import { MovieContext } from './contexts/MovieContext';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import * as api from './services/movieService';
 
 import './App.css'
 
@@ -15,43 +17,59 @@ import { Footer } from './components/footer/Footer';
 import { clearUserData } from './utils/localStorage';
 import { NotFound } from './components/not-found/NotFound';
 import { Create } from './components/create/Create';
+import { useMovieStorage } from './hooks/useMoviesStorage';
+import { useEffect } from 'react';
 
 
 function App() {
     const [userData, setUserData] = useLocalStorage({});
-
+    const [movies, setMovies] = useMovieStorage();
+    
     const userLogin = (userData) => {
         setUserData(userData);
     };
-
+    
     const userLogout = () => {
         setUserData(clearUserData)
     };
+    
+    useEffect(() => {
+        try {
+            api.getAllmovies()
+            .then(result => {
+                setMovies(result);
+            })
+        } catch (err) {
+            alert(err.message);
+        }
+    }, [movies])
 
     return (
         <UserContext.Provider value={{ userData, userLogin, userLogout }}>
-        <div className="App">
+            <div className="App">
 
-            <Header />
+                <Header />
 
-            <main>
+                <main>
 
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/catalog' element={<Catalog />} />
-                    <Route path='/create' element={<Create />} />
-                    <Route path='/search' element={<Search />} />
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/register' element={<Register />} />
-                    <Route path='/logout' element={<Logout />} />
-                    <Route path='*' element={<NotFound />} />
-                </Routes>
+                    <MovieContext.Provider value={movies}>
+                        <Routes>
+                            <Route path='/' element={<Home />} />
+                            <Route path='/catalog' element={<Catalog />} />
+                            <Route path='/create' element={<Create />} />
+                            <Route path='/search' element={<Search />} />
+                            <Route path='/login' element={<Login />} />
+                            <Route path='/register' element={<Register />} />
+                            <Route path='/logout' element={<Logout />} />
+                            <Route path='*' element={<NotFound />} />
+                        </Routes>
+                    </MovieContext.Provider>
 
-            </main>
+                </main>
 
-            <Footer />
+                <Footer />
 
-        </div>
+            </div>
         </UserContext.Provider>
     );
 }
