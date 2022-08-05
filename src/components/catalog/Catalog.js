@@ -1,17 +1,32 @@
 import catalogStyles from '../catalog/Catalog.module.css';
 
-import { useContext } from 'react';
-import { MovieContext } from '../../contexts/MovieContext';
 import { CatalogList } from './catalogList/CatalogList';
 
+import { useEffect, useState } from 'react';
+import * as api from '../../services/movieService';
+
 export const Catalog = () => {
-    const  movies  = useContext(MovieContext);
+    const [movies, setMovies] = useState([]);
+
+    useEffect(() => {
+        try {
+            api.getAllmovies()
+            .then(movies => {
+                setMovies(movies);
+            })
+        } catch (err) {
+            alert(err.message);
+        }
+    }, [])
     return (
         <>
             <h2 className={catalogStyles['all-records']}>All Movies</h2>
             <section className={catalogStyles['catalog']}>
                 <ul className={catalogStyles['catalog-list']}>
-                    {movies.map(movie =>  < CatalogList key={movie._id} movie={movie}/>)}
+                    {movies 
+                           ? movies.map(movie =>  < CatalogList key={movie._id} movie={movie}/>)
+                           : <h2>No Records Found</h2>
+                    }
                 </ul>
             </section>
         </>

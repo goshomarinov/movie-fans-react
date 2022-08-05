@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { UserContext } from './contexts/UserContext';
 import { MovieContext } from './contexts/MovieContext';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import { useEffect, useState } from 'react';
 import * as api from './services/movieService';
 
 import './App.css'
@@ -17,13 +18,11 @@ import { Footer } from './components/footer/Footer';
 import { clearUserData } from './utils/localStorage';
 import { NotFound } from './components/not-found/NotFound';
 import { Create } from './components/create/Create';
-import { useMovieStorage } from './hooks/useMoviesStorage';
-import { useEffect } from 'react';
 
 
 function App() {
+    const [movies, setMovies] = useState([]);
     const [userData, setUserData] = useLocalStorage({});
-    const [movies, setMovies] = useMovieStorage();
     
     const userLogin = (userData) => {
         setUserData(userData);
@@ -37,12 +36,15 @@ function App() {
         try {
             api.getAllmovies()
             .then(result => {
-                setMovies(result);
+                setMovies(state => ({
+                    ...state,
+                    result
+                }))
             })
         } catch (err) {
             alert(err.message);
         }
-    }, [movies])
+    },[])
 
     return (
         <UserContext.Provider value={{ userData, userLogin, userLogout }}>

@@ -1,7 +1,6 @@
 import catalogStyles from '../Catalog.module.css';
 
 export const CatalogList = ({movie}) => {
-    console.log(movie)
     return (
         <div className={catalogStyles['catalog-list-card']}>
             <img src={movie.imgUrl} alt="" />
