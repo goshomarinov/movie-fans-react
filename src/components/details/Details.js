@@ -38,20 +38,21 @@ export const Details = () => {
             <section className={detailsStyles['container']}>
                 <div className={detailsStyles['details-info']}>
                     <h3>Title: {movie.title}</h3>
+                    <p>Image Url: {movie.imgUrl}</p>
                     <p>Year: {movie.year}</p>
                     <p>Description: {movie.description}</p>
                 </div>
                 <div className={detailsStyles['details-btn']}>
 
                     {userData
-                        ? <Link to={`/comments/${movie._id}`}>Commend</Link>
+                        ? <Link to={`details/comments/${movie._id}`}>Commend</Link>
                         : null
                     }
 
                     {authorCheck
                         ? <>
-                            <Link to={`/details/${movie._id}`}>Edit</Link>
-                            <Link to={`/details/${movie._id}`}>Delete</Link>
+                            <Link to={`/details/edit/${movie._id}`}>Edit</Link>
+                            <Link to={`/details/delete/${movie._id}`}>Delete</Link>
                           </>
                         : null
                     }

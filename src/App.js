@@ -19,30 +19,31 @@ import { clearUserData } from './utils/localStorage';
 import { NotFound } from './components/not-found/NotFound';
 import { Create } from './components/create/Create';
 import { Details } from './components/details/Details';
+import { Edit } from './components/edit/Edit';
 
 
 function App() {
     const [movies, setMovies] = useState([]);
     const [userData, setUserData] = useLocalStorage({});
-    
+
     const userLogin = (userData) => {
         setUserData(userData);
     };
-    
+
     const userLogout = () => {
         setUserData(clearUserData)
     };
-    
+
     useEffect(() => {
         try {
             api.getAllmovies()
-            .then(result => {
-                setMovies(result)
-            })
+                .then(result => {
+                    setMovies(result)
+                })
         } catch (err) {
             alert(err.message);
         }
-    },[])
+    }, [])
 
     return (
         <UserContext.Provider value={{ userData, userLogin, userLogout }}>
@@ -57,6 +58,7 @@ function App() {
                             <Route path='/' element={<Home />} />
                             <Route path='/catalog' element={<Catalog />} />
                             <Route path='/catalog/:id' element={<Details />} />
+                            <Route path='/details/edit/:id' element={<Edit />} />
                             <Route path='/create' element={<Create />} />
                             <Route path='/search' element={<Search />} />
                             <Route path='/login' element={<Login />} />
