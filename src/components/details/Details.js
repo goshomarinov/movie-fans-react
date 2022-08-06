@@ -1,20 +1,36 @@
-import { useParams } from 'react-router-dom';
 import detailsStyles from '../details/Details.module.css';
 import * as api from '../../services/movieService';
-import { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext';
+
 
 export const Details = () => {
+    const { userData } = useContext(UserContext);
     const [movie, setMovie] = useState([]);
     const { id } = useParams();
 
-    try {
-        api.getOneMovie(id)
-            .then(res => {
-                setMovie(res);
-            })
-    } catch (err) {
-        alert(err.message);
+    let authorCheck = false;
+
+    if (userData) {
+        if (userData._id == movie._ownerId) {
+            authorCheck = true;
+        } else {
+            authorCheck = false;
+        }
     }
+
+    useEffect(() => {
+        try {
+            api.getOneMovie(id)
+                .then(res => {
+                    setMovie(res);
+                })
+        } catch (err) {
+            alert(err.message);
+        }
+    }, [])
 
     return (
         <section className={detailsStyles['details']}>
@@ -26,9 +42,21 @@ export const Details = () => {
                     <p>Description: {movie.description}</p>
                 </div>
                 <div className={detailsStyles['details-btn']}>
-                    <a href="">Commend</a>
-                    <a href="">Edit</a>
-                    <a href="">Delete</a>
+
+                    {userData
+                        ? <Link to={`/comments/${movie._id}`}>Commend</Link>
+                        : null
+                    }
+
+                    {authorCheck
+                        ? <>
+                            <Link to={`/details/${movie._id}`}>Edit</Link>
+                            <Link to={`/details/${movie._id}`}>Delete</Link>
+                          </>
+                        : null
+                    }
+
+
                 </div>
             </section>
         </section>
