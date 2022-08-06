@@ -12,19 +12,20 @@ export const Catalog = () => {
         try {
             api.getAllmovies()
             .then(movies => {
-                setMovies(movies);
+                setMovies(movies)
             })
         } catch (err) {
             alert(err.message);
         }
     }, [])
+    
     return (
         <>
             <h2 className={catalogStyles['all-records']}>All Movies</h2>
             <section className={catalogStyles['catalog']}>
                 <ul className={catalogStyles['catalog-list']}>
                     {movies 
-                           ? movies.map(movie =>  < CatalogList key={movie._id} movie={movie}/>)
+                           ? movies.map(movie =>  < CatalogList key={movie._id} movie={movie} />)
                            : <h2>No Records Found</h2>
                     }
                 </ul>

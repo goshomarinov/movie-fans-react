@@ -57,7 +57,8 @@
     justify-content: space-around;
 }
 
-.catalog-list .catalog-list-card div button {
+.catalog-list .catalog-list-card div a {
+    text-decoration: none;
     margin: 12px;
     padding: 5px;
     font-weight: bold;
@@ -69,6 +70,6 @@
     cursor: pointer;
 }
 
-.catalog-list .catalog-list-card div button:hover {
+.catalog-list .catalog-list-card div a:hover {
     background-color: transparent;
 }

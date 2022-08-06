@@ -18,6 +18,7 @@ import { Footer } from './components/footer/Footer';
 import { clearUserData } from './utils/localStorage';
 import { NotFound } from './components/not-found/NotFound';
 import { Create } from './components/create/Create';
+import { Details } from './components/details/Details';
 
 
 function App() {
@@ -36,10 +37,7 @@ function App() {
         try {
             api.getAllmovies()
             .then(result => {
-                setMovies(state => ({
-                    ...state,
-                    result
-                }))
+                setMovies(result)
             })
         } catch (err) {
             alert(err.message);
@@ -58,6 +56,7 @@ function App() {
                         <Routes>
                             <Route path='/' element={<Home />} />
                             <Route path='/catalog' element={<Catalog />} />
+                            <Route path='/catalog/:id' element={<Details />} />
                             <Route path='/create' element={<Create />} />
                             <Route path='/search' element={<Search />} />
                             <Route path='/login' element={<Login />} />

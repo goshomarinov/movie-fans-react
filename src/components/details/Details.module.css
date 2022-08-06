@@ -1,0 +1,40 @@
+.details {
+    display: flex;
+    max-width: 80vw;
+    margin-left: 110px;
+    background-color: #3b4855;
+    border-radius: 8px;
+}
+
+.details img {
+    width: 40%;
+    max-height: 70vh;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.details .container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    color: #fff;
+    justify-content: space-around;
+}
+
+.details .details-info {
+    margin: 20px;
+}
+
+.details .details-btn a {
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid rgb(240, 102, 51);
+    background-color: rgb(240, 102, 51);
+    padding: 8px;
+    border-radius: 8px;
+    margin: 12px;
+}
+
+.details .details-btn a:hover {
+    background-color: transparent;
+}
