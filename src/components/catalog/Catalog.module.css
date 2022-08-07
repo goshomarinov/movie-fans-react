@@ -37,6 +37,7 @@
     border: 2px solid #9ca4aa;
     border-radius: 8px;
     background-color: #6d7379;
+    flex-wrap: wrap;
 }
 
 .catalog-list .catalog-list-card img {
@@ -47,8 +48,8 @@
 }
 
 .catalog-list .catalog-list-card h3 {
-    width: 70%;
-    margin-left: 22px;
+    width: 90%;
+    text-align: center;
     color: #c5cace;
 }
 

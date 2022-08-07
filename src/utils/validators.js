@@ -53,6 +53,42 @@ export const searchBtnValidator = (value) => {
     }
 }
 
+export const addCommValidator = (value) => {
+    if (value.length < 3) {
+        return (
+            <span style={{ color: 'red' }}>Comment Input must be minimum 3 characters long!</span>
+        );
+    } else {
+        return '';
+    }
+}
+
+export const addCommBtnValidator = (value) => {
+    if (value.length < 3) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+export const editCommValidator = (value) => {
+    if (value.length < 3) {
+        return (
+            <span style={{ color: 'red' }}>Comment Input must be minimum 3 characters long!</span>
+        );
+    } else {
+        return '';
+    }
+}
+
+export const editCommBtnValidator = (value) => {
+    if (value.length < 3) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 export const loginBtnValidator = (values) => {
     if (!EMAIL_PATTERN.test(values.email) || values.password.length < 6) {
         return true;

@@ -38,3 +38,23 @@
 .details .details-btn a:hover {
     background-color: transparent;
 }
+
+.details .details-btn .comm-btn {
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid rgb(240, 102, 51);
+    background-color: rgb(240, 102, 51);
+    padding: 8px;
+    border-radius: 8px;
+    margin: 12px;
+}
+
+.details .details-btn .comm-btn:hover {
+    background-color: transparent;
+}
+
+.no-comm {
+    color: #fff;
+    letter-spacing: 5px;
+    text-align: center;
+}

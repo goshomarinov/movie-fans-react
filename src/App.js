@@ -21,6 +21,9 @@ import { Create } from './components/create/Create';
 import { Details } from './components/details/Details';
 import { Edit } from './components/edit/Edit';
 import { Delete } from './components/delete/Delete';
+import { AddComment } from './components/comments/addComment/AddComment';
+import { EditComment } from './components/comments/editComment/EditComment';
+import { DeleteComment } from './components/comments/deleteComment/DeleteComment';
 
 
 function App() {
@@ -61,6 +64,9 @@ function App() {
                             <Route path='/catalog/:id' element={<Details />} />
                             <Route path='/details/edit/:id' element={<Edit />} />
                             <Route path='/details/delete/:id' element={<Delete />} />
+                            <Route path='/details/comment/:id' element={<AddComment />}/>
+                            <Route path='/details/comment/edit/:id' element={<EditComment />}/>
+                            <Route path='/details/comment/delete/:id' element={<DeleteComment />}/>
                             <Route path='/create' element={<Create />} />
                             <Route path='/search' element={<Search />} />
                             <Route path='/login' element={<Login />} />

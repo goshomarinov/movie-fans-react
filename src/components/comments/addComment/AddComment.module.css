@@ -1,0 +1,43 @@
+.add-comm {
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    margin-left: 110px;
+    background-color: #3b4855;
+    border-radius: 8px;
+}
+
+.add-comm img {
+    width: 100%;
+    max-height: 40vh;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin-bottom: 22px;
+}
+
+.add-comm .add-comm-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-comm .add-comm-form label{
+    color: #fff;
+    text-align: center;
+}
+
+.add-comm .add-comm-form input {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.add-comm .add-comm-form button {
+    background-color: rgb(240, 102, 51);
+    border-color: rgb(240, 102, 51);
+    color: #fff;
+    cursor: pointer;
+}
+
+.add-comm .add-comm-form button:hover {
+    background-color: transparent;
+}

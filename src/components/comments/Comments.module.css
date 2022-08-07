@@ -1,0 +1,50 @@
+.comments {
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    margin-left: 110px;
+    background-color: #3b4855;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.comments p {
+    margin: 8px 16px;
+    color: #fff;
+}
+
+.comments .btns {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 12px;
+}
+
+.comments .btns .del {
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid red;
+    background-color: red;
+    padding: 6px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.comments .btns .edit {
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid green;
+    background-color: green;
+    padding: 6px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.comments .btns .edit:hover {
+    background-color: transparent;
+}
+
+.comments .btns .del:hover {
+    background-color: transparent;
+}
+
