@@ -36,7 +36,7 @@ export const Edit = () => {
         } catch (err) {
             alert(err.message);
         }
-    },[])
+    }, [])
 
     const changeHandler = (e) => {
         setValues(state => ({
@@ -68,6 +68,10 @@ export const Edit = () => {
             }))
         }
     };
+
+    const onCancel = () => {
+        navigate(`/catalog/${id}`);
+    }
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -148,6 +152,12 @@ export const Edit = () => {
                     type="submit"
                     value="Edit"
                     disabled={createBtnValidator(values)}
+                />
+
+                <input className={editStyles['edit-btn']}
+                    type="submit"
+                    value="Cancel"
+                    onClick={onCancel}
                 />
             </form>
         </section>
