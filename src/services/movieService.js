@@ -23,5 +23,5 @@ export async function deleteMovies(id) {
 }
 
 export async function getResultSearch(query) {
-    return api.get(`/data/movies?where=name%20LIKE%20%22${query}%22`);
+    return api.get(`/data/movies?where=title%20LIKE%20%22${query}%22`);
 }

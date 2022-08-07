@@ -34,6 +34,25 @@ export const repassValidator = (values) => {
         return '';
     }
 }
+
+export const searchValidator = (value) => {
+    if (value.length < 4) {
+        return (
+            <span style={{ color: 'red' }}>Search Input must be minimum 4 characters long!</span>
+        );
+    } else {
+        return '';
+    }
+}
+
+export const searchBtnValidator = (value) => {
+    if (value.length < 4) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 export const loginBtnValidator = (values) => {
     if (!EMAIL_PATTERN.test(values.email) || values.password.length < 6) {
         return true;
