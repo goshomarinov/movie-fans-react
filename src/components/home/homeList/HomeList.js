@@ -1,6 +1,5 @@
-
 import homeStyles from '../Home.module.css';
-
+import { Link } from 'react-router-dom';
 
 export const HomeList = ({movie}) => {
     return (
@@ -8,7 +7,7 @@ export const HomeList = ({movie}) => {
         <img src={movie.imgUrl} alt="" />
             <h3>{movie.title}</h3>
             <div>
-                <button>Details</button>
+                <Link to={`/catalog/${movie._id}`}>Details</Link>
             </div>
     </div>
     );
