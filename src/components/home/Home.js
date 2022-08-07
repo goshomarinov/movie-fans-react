@@ -34,9 +34,9 @@ export const Home = () => {
             <h2 className={homeStyles['recent']}>Most Recent Posts</h2>
 
             <section className={homeStyles['home-list']}>
-                {movies 
+                {movies.length > 0
                        ? movies.map(movie => <HomeList movie={movie} key={movie._id} />)
-                       : <h2>No Records Found</h2>
+                       : <h2 className={homeStyles['no-records']}>No Records Found</h2>
                 }
             </section>
         </main>

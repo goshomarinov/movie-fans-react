@@ -122,3 +122,10 @@
 .home-list .home-list-card div button:hover {
     background-color: transparent;
 }
+
+.no-records {
+    margin-left: 370px;
+    letter-spacing: 5px;
+    font-size: 30px;
+    color: #9ca4aa;
+}
