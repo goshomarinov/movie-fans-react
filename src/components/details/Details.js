@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
+import {confirm} from 'react-confirm-box';
 
 
 export const Details = () => {
@@ -56,8 +57,6 @@ export const Details = () => {
                           </>
                         : null
                     }
-
-
                 </div>
             </section>
         </section>

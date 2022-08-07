@@ -10,7 +10,7 @@
 
 .catalog-list {
     display: flex;
-    max-width: 100%;
+    width: 100%;
     flex-wrap: wrap;
 }
 
@@ -41,9 +41,9 @@
 
 .catalog-list .catalog-list-card img {
     width: 140px;
-   height: 215px;
-   border-radius: 8px;
-   margin-top: 12px;
+    height: 215px;
+    border-radius: 8px;
+    margin-top: 12px;
 }
 
 .catalog-list .catalog-list-card h3 {
@@ -72,4 +72,11 @@
 
 .catalog-list .catalog-list-card div a:hover {
     background-color: transparent;
+}
+
+.no-records {
+    margin-left: 310px;
+    letter-spacing: 5px;
+    font-size: 30px;
+    color: #9ca4aa;
 }

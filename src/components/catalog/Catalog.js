@@ -24,9 +24,9 @@ export const Catalog = () => {
             <h2 className={catalogStyles['all-records']}>All Movies</h2>
             <section className={catalogStyles['catalog']}>
                 <ul className={catalogStyles['catalog-list']}>
-                    {movies 
+                    {movies.length > 0 
                            ? movies.map(movie =>  < CatalogList key={movie._id} movie={movie} />)
-                           : <h2>No Records Found</h2>
+                           : <h2 className={catalogStyles['no-records']}>No Records Found</h2>
                     }
                 </ul>
             </section>

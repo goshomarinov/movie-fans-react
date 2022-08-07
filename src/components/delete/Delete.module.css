@@ -1,0 +1,56 @@
+.delete-section {
+    display: flex;
+    max-width: 80vw;
+    margin-left: 110px;
+    margin-top: 0px;
+    background-color: #3b4855;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+.delete-section img {
+    width: 40%;
+    margin-left: 0px;
+}
+
+.delete-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.delete-form label {
+    font-size: 20px;
+    color: red;
+}
+
+.delete-form .btns {
+    margin-top: 60px;
+}
+
+.delete-form .btns .yes {
+    cursor: pointer;
+    padding: 16px;
+    margin: 70px;
+    background-color: red;
+    border-color: red;
+    border-radius: 8px;
+}
+
+.delete-form .btns .yes:hover {
+    background-color: transparent;
+}
+
+.delete-form .btns .no {
+    cursor: pointer;
+    padding: 16px;
+    margin: 70px;
+    background-color: green;
+    border-color: green;
+    border-radius: 8px;
+}
+
+.delete-form .btns .no:hover {
+    background-color: transparent;
+}

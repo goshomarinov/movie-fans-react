@@ -20,6 +20,7 @@ import { NotFound } from './components/not-found/NotFound';
 import { Create } from './components/create/Create';
 import { Details } from './components/details/Details';
 import { Edit } from './components/edit/Edit';
+import { Delete } from './components/delete/Delete';
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
                             <Route path='/catalog' element={<Catalog />} />
                             <Route path='/catalog/:id' element={<Details />} />
                             <Route path='/details/edit/:id' element={<Edit />} />
+                            <Route path='/details/delete/:id' element={<Delete />} />
                             <Route path='/create' element={<Create />} />
                             <Route path='/search' element={<Search />} />
                             <Route path='/login' element={<Login />} />
