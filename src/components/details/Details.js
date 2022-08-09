@@ -25,26 +25,15 @@ export const Details = () => {
 
     useEffect(() => {
         try {
-            api.getOneMovie(id)
-                .then(res => {
-                    setMovie(res);
-                })
+           Promise.all([api.getOneMovie(id), commentApi.getAllComments()])
+           .then(res => {
+            setMovie(res[0])
+            setComments(res[1].filter(c => c.postId == id))
+           })
         } catch (err) {
             alert(err.message);
         }
     }, [])
-
-    useEffect(() => {
-        try {
-            commentApi.getAllComments()
-            .then(res => {
-                const comm = res.filter(c => c.postId == id);
-                setComments(comm)
-            })
-        } catch (err) {
-            alert(err.message);
-        }
-    },[])
 
     return (
         <>

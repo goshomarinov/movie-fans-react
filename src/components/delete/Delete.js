@@ -15,7 +15,6 @@ export const Delete = () => {
 
     const onDelete = (e) => {
         e.preventDefault();
-
         try {
             api.deleteMovies(id)
                 .then(res => {
