@@ -4,7 +4,7 @@ export const emailValidator = (email) => {
 
     if (!EMAIL_PATTERN.test(email)) {
         return (
-            <span style={{ color: 'red' }}>Email is not valid</span>
+            <div style={{ color: 'red' }}>Email is not valid</div>
         );
     } else {
         return '';
@@ -14,7 +14,7 @@ export const emailValidator = (email) => {
 export const passwordValidator = (password) => {
     if (password.length < 6) {
         return (
-            <span style={{ color: 'red' }}>Password must be minimum 6 characters long!</span>
+            <div style={{ color: 'red' }}>Password must be minimum 6 characters long!</div>
         );
     } else {
         return '';
@@ -24,11 +24,11 @@ export const passwordValidator = (password) => {
 export const repassValidator = (values) => {
     if (values.rePassword.length < 6) {
         return (
-            <span style={{ color: 'red' }}>Repeat password must be minimum 6 characters long!</span>
+            <div style={{ color: 'red' }}>Repeat password must be minimum 6 characters long!</div>
         );
     } else if (values.rePassword != values.password) {
         return (
-            <span style={{ color: 'red' }}>Passwords don't match</span>
+            <div style={{ color: 'red' }}>Passwords don't match</div>
         );
     } else {
         return '';
@@ -38,7 +38,7 @@ export const repassValidator = (values) => {
 export const searchValidator = (value) => {
     if (value.length < 4) {
         return (
-            <span style={{ color: 'red' }}>Search Input must be minimum 4 characters long!</span>
+            <div style={{ color: 'red' }}>Search Input must be minimum 4 characters long!</div>
         );
     } else {
         return '';
@@ -56,7 +56,7 @@ export const searchBtnValidator = (value) => {
 export const addCommValidator = (value) => {
     if (value.length < 3) {
         return (
-            <span style={{ color: 'red' }}>Comment Input must be minimum 3 characters long!</span>
+            <div style={{ color: 'red' }}>Comment Input must be minimum 3 characters long!</div>
         );
     } else {
         return '';
@@ -74,7 +74,7 @@ export const addCommBtnValidator = (value) => {
 export const editCommValidator = (value) => {
     if (value.length < 3) {
         return (
-            <span style={{ color: 'red' }}>Comment Input must be minimum 3 characters long!</span>
+            <div style={{ color: 'red' }}>Comment Input must be minimum 3 characters long!</div>
         );
     } else {
         return '';
@@ -126,7 +126,7 @@ export const titleValidator = (title) => {
 
     if (title.length < 4) {
         return (
-            <span style={{ color: 'red' }}>Title must bi minimum 4 characters long!</span>
+            <div style={{ color: 'red' }}>Title must bi minimum 4 characters long!</div>
         );
     } else {
         return '';
@@ -137,7 +137,7 @@ export const descValidator = (description) => {
 
     if (description.length < 10) {
         return (
-            <span style={{ color: 'red' }}>Description must bi minimum 10 characters long!</span>
+            <div style={{ color: 'red' }}>Description must bi minimum 10 characters long!</div>
         );
     } else {
         return '';
@@ -148,7 +148,7 @@ export const urlValidator = (url) => {
 
     if (!URL_PATTERN.test(url)) {
         return (
-            <span style={{ color: 'red' }}>Image Url is invalid</span>
+            <div style={{ color: 'red' }}>Image Url is invalid</div>
         );
     } else {
         return '';
@@ -160,7 +160,7 @@ export const yearValidator = (year) => {
 
     if (temp < 1920 || temp > 2022 || temp.length > 4 || temp.length < 4) {
         return (
-            <span style={{ color: 'red' }}>Year is invalid</span>
+            <div style={{ color: 'red' }}>Year is invalid</div>
         );
     } else {
         return '';

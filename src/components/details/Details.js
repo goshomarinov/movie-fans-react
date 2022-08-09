@@ -60,14 +60,14 @@ export const Details = () => {
                     <div className={detailsStyles['details-btn']}>
 
                         {userData
-                            ? <Link to={`/details/comment/${movie._id}`} className={detailsStyles['comm-btn']}>Comment</Link>
+                            ? <Link to={`/catalog/details/comment/${movie._id}`} className={detailsStyles['comm-btn']}>Comment</Link>
                             : null
                         }
 
                         {authorCheck
                             ? <>
-                                <Link to={`/details/edit/${movie._id}`}>Edit</Link>
-                                <Link to={`/details/delete/${movie._id}`}>Delete</Link>
+                                <Link to={`/catalog/details/edit/${movie._id}`}>Edit</Link>
+                                <Link to={`/catalog/details/delete/${movie._id}`}>Delete</Link>
                             </>
                             : null
                         }
