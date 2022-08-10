@@ -1,5 +1,6 @@
 .details {
     display: flex;
+    flex-wrap: wrap;
     max-width: 80vw;
     margin-left: 110px;
     background-color: #3b4855;
@@ -8,7 +9,7 @@
 
 .details img {
     width: 40%;
-    max-height: 70vh;
+    height: 70vh;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
@@ -16,15 +17,21 @@
 .details .container {
     display: flex;
     flex-direction: column;
-    margin-left: 200px;
+    flex-wrap: wrap;
+    width: 50%;
+    margin-left: 40px;
     color: #fff;
-    justify-content: space-around;
 }
 
-.details .details-info {
+.details .container .details-info {
+    
+    overflow: hidden;
     margin: 20px;
 }
 
+.details .container .details-info p {
+    
+}
 .details .details-btn a {
     text-decoration: none;
     color: #fff;
@@ -62,4 +69,23 @@
     color: #Fff;
     text-align: center;
     letter-spacing: 5px;
+}
+
+.like {
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid blue;
+    background-color: blue;
+    padding: 6px;
+    border-radius: 8px;
+    margin: 12px;
+    font-size: 18px;
+}
+
+.like:hover {
+    background-color: transparent;
+}
+
+.like i {
+    margin-left: 6px;
 }
