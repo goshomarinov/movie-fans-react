@@ -33,6 +33,10 @@ export const AddComment = () => {
         }
     };
 
+    const onCancel = () => {
+        navigate(`/catalog/${id}`);
+    }
+
     const onSubmit = (e) => {
         e.preventDefault();
         
@@ -47,7 +51,7 @@ export const AddComment = () => {
         try {
             commentApi.createComment(data)
             .then(res => {
-                navigate(`/catalog/${id}`)
+                navigate(`/catalog/${id}`);
             })
         } catch (err) {
             alert(err.message)
@@ -70,6 +74,7 @@ export const AddComment = () => {
                 />
                 {errors.comm}
                 <button disabled={addCommBtnValidator(value.comm)}>Publish</button>
+                <button className={addCommentStyles['cancel']} onClick={onCancel}>Cancel</button>
             </form>
         </section>
     );

@@ -56,7 +56,7 @@ export const Details = () => {
                         {authorCheck
                             ? <>
                                 <Link to={`/catalog/details/edit/${movie._id}`}>Edit</Link>
-                                <Link to={`/catalog/details/delete/${movie._id}`}>Delete</Link>
+                                <Link className={detailsStyles['delete']} to={`/catalog/details/delete/${movie._id}`}>Delete</Link>
                             </>
                             : null
                         }

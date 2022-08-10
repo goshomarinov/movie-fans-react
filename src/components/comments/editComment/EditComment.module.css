@@ -32,10 +32,15 @@
 }
 
 .edit-comm .edit-comm-form button {
-    background-color: rgb(240, 102, 51);
-    border-color: rgb(240, 102, 51);
+    background-color: green;
+    border-color: green;
     color: #fff;
     cursor: pointer;
+}
+
+.edit-comm .edit-comm-form .cancel {
+    background-color: red;
+    border-color: red;
 }
 
 .edit-comm .edit-comm-form button:hover {

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { getUserData, setUserData } from '../utils/localStorage';
 
-export const useLocalStorage = (userData) => {
+export const useLocalStorage = () => {
     const [value, setValue] = useState(() => {
         const storedData = getUserData();
 

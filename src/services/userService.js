@@ -1,4 +1,4 @@
-import {setUserData, getUserData, clearUserData} from '../utils/localStorage';
+import {setUserData, clearUserData} from '../utils/localStorage';
 import * as api from "./requester";
 
 export async function login(email, password) {

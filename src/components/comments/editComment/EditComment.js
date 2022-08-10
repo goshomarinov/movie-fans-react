@@ -43,6 +43,10 @@ export const EditComment = () => {
         }
     };
 
+    const onCancel = () => {
+        navigate(`/catalog/${value.postId}`);
+    }
+
     const onEdit = (e) => {
         e.preventDefault();
         try {
@@ -71,6 +75,7 @@ export const EditComment = () => {
                 />
                 {errors.title}
                 <button disabled={editCommBtnValidator(value.title)}>Publish</button>
+                <button className={editCommentStyles['cancel']} onClick={onCancel}>Cancel</button>
             </form>
         </section>
     );

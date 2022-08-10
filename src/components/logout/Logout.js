@@ -11,7 +11,7 @@ export const Logout = () => {
    
     useEffect(() => {
         userApi.logout()
-            .then(() => {
+            .then(res => {
                 userLogout();
                 navigate('/');
             })
