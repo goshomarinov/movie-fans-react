@@ -9,7 +9,6 @@
 
 .details img {
     width: 40%;
-    height: 70vh;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
@@ -29,9 +28,7 @@
     margin: 20px;
 }
 
-.details .container .details-info p {
-    
-}
+
 .details .details-btn a {
     text-decoration: none;
     color: #fff;
