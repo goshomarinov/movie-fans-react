@@ -81,3 +81,21 @@
     font-size: 30px;
     color: #9ca4aa;
 }
+
+.pages {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 6px 12px;
+}
+
+.pages button {
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(240, 102, 51);
+    border-color: rgb(240, 102, 51);
+}
+
+.pages button:hover {
+    background-color: transparent;
+}

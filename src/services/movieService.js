@@ -1,6 +1,8 @@
 import * as api from './requester';
 
-
+export async function getPaginatedMovies(offset, pageSize) {
+    return api.get(`/data/movies?offset=${offset}&pageSize=${pageSize}`);
+}
 
 export async function getAllmovies() {
     return api.get('/data/movies?sortBy=_createdOn%20desc');

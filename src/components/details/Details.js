@@ -60,7 +60,6 @@ export const Details = () => {
             alert(err.message);
         }
     }
-    console.log(likes)
 
     const onDislike = () => {
         try {
@@ -103,13 +102,13 @@ export const Details = () => {
                             className={detailsStyles['like']}
                                 onClick={onDislike}
                             >Dislike
-                                <i class="fa-solid fa-thumbs-down"></i>
+                                <i className="fa-solid fa-thumbs-down"></i>
                             </button>
                             : <button
                             className={detailsStyles['like']}
                                 onClick={onLike}
                             >Like
-                                <i class="fa-solid fa-thumbs-up"></i>
+                                <i className="fa-solid fa-thumbs-up"></i>
                             </button>
                         }
 
