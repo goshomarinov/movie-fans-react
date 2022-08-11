@@ -58,11 +58,17 @@ Private Part (Logged in users only)
 
 
 How to run this project?
+
 Front-end: React.js
+
 npm install
+
 npm run start
+
 Back-end: SoftUni Practice Server
+
 Clone Repository https://github.com/softuni-practice-server/softuni-practice-server
 npm install
+
 node server.js
           
