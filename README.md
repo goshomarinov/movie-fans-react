@@ -1,5 +1,7 @@
 React Final Project
+
 React Movie Fans is like discussion forum
+
 Project Description
 
 The Movie Fans app contains a collection of movies. Users can view movie details,write comments, like and unlike movie.
