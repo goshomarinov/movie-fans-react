@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+React Final Project
+React Movie Fans is like discussion forum
+Project Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Movie Fans app contains a collection of movies. Users can view movie details,write comments, like and unlike movie.
 
-## Available Scripts
+    Home: Any user can view the newest three posts,as well as the movie details.
 
-In the project directory, you can run:
+    Pagination: Pagination of the movie collection is added and applied to the catalog page.
 
-### `npm start`
+    Search: Search functionality is added to the app. Movies are filtered by title.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    Creating / Editing / Deleting Movies: Movies in the app are created by authenticated users only. Owner of the post can edit movie details, delete a movie from the collection. Each movie has a title, image url, year, a short description, and likes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    Liking / Unliking Movie: To like / unlike a movie the user should login first. Anonymous users can't see any buttons on details page or functionality, only info for the movie and comments.
 
-### `npm test`
+    Comment / Edit Comment / Delete Comment: To comment a movie the user should login first. Only the owner of the comment can edit or delete his comment.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Registration / Login / Logout: Users can register providing email and password. Upon registration users are redirected to Home. Guests can see Login/Register buttons but for logged in users is other way around.
 
-### `npm run build`
+Public Part:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    The public part of the Book Store is visible by any user without authentication:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+     Home Page listing newest three movies
+     Login
+     Register
+     Search
+     Catalog with details button for every movie and pagination
+     Details Page listing all movie details (title, image url, year, description, number of likes and comments if any).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Private Part (Logged in users only)
 
-### `npm run eject`
+    Home Page listing newest three movies
+    Search
+    Catalog with details button for every movie and pagination
+    Add Movie
+    Logout
+    Details for Movie:
+       Info:
+          Title
+          Image url
+          Year
+          Description
+          Likes
+          Comments
+        Buttons:
+          Comment:
+              User can comment as much as he likes.
+              Edit / Delete Comment:
+                  Only owner of the comment can edit or delete it.
+          Like:
+              User can like movie.
+          Dislike:
+              Dislike button shows only if user already liked movie.
+          Edit / Delete Movie:
+              Only owner of the movie can edit or delete it.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+How to run this project?
+    Front-end: React.js
+          npm install
+          npm run start
+    Back-end: SoftUni Practice Server
+          Clone Repository https://github.com/softuni-practice-server/softuni-practice-server
+          npm install
+          node server.js
+          
