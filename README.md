@@ -68,6 +68,7 @@ npm run start
 Back-end: SoftUni Practice Server
 
 Clone Repository https://github.com/softuni-practice-server/softuni-practice-server
+
 npm install
 
 node server.js
