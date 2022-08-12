@@ -35,10 +35,12 @@ export const Details = () => {
         }
     }, [])
 
-    if (likes.length > 0) {
-        isLiked = likes.some(l => l._ownerId == userData._id);
-    } else {
-        isLiked = false;
+    if (userData) {
+        if (likes.length > 0) {
+            isLiked = likes.some(l => l._ownerId == userData._id);
+        } else {
+            isLiked = false;
+        }
     }
 
     if (userData) {
@@ -97,19 +99,24 @@ export const Details = () => {
                             : null
                         }
 
-                        {isLiked
-                            ? <button
-                            className={detailsStyles['like']}
-                                onClick={onDislike}
-                            >Dislike
-                                <i className="fa-solid fa-thumbs-down"></i>
-                            </button>
-                            : <button
-                            className={detailsStyles['like']}
-                                onClick={onLike}
-                            >Like
-                                <i className="fa-solid fa-thumbs-up"></i>
-                            </button>
+                        {userData
+                            ? <>
+                                {isLiked
+                                    ? <button
+                                        className={detailsStyles['like']}
+                                        onClick={onDislike}
+                                    >Dislike
+                                        <i className="fa-solid fa-thumbs-down"></i>
+                                    </button>
+                                    : <button
+                                        className={detailsStyles['like']}
+                                        onClick={onLike}
+                                    >Like
+                                        <i className="fa-solid fa-thumbs-up"></i>
+                                    </button>
+                                }
+                            </>
+                            : null
                         }
 
                         {authorCheck

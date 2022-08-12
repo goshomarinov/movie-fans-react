@@ -31,6 +31,7 @@
 
 .delete-form .btns .yes {
     cursor: pointer;
+    color: #fff;
     padding: 16px;
     margin: 70px;
     background-color: red;
@@ -46,6 +47,7 @@
     cursor: pointer;
     padding: 16px;
     margin: 70px;
+    color: #fff;
     background-color: green;
     border-color: green;
     border-radius: 8px;
