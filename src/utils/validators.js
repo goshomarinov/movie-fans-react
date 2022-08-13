@@ -38,7 +38,7 @@ export const repassValidator = (values) => {
 export const searchValidator = (value) => {
     if (value.length < 4) {
         return (
-            <div style={{ color: 'red' }}>Search Input must be minimum 4 characters long!</div>
+            <span style={{ color: 'red' }}>Search Input must be minimum 4 characters long!</span>
         );
     } else {
         return '';
